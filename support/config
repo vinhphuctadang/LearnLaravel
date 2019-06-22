@@ -1,0 +1,24 @@
+<!-- Add this config to xampp:apache/conf/extra/httpd-host.conf -->
+
+<VirtualHost *:80>
+    #Thay thế bằng email của Quản trị web của bạn
+  ServerAdmin webmaster@sunshine.local
+  
+  #Thay thế bằng đường dẫn đến source của bạn
+    DocumentRoot "D:/dnpcuong/src/sunshine/public"
+  
+  #Thay thế bằng tên trang web bạn mong muốn
+    ServerName  sunshine.local
+  
+  #Thay thế bằng tên file log bạn mong muốn
+    ErrorLog "logs/sunshine.local-error.log"
+    CustomLog "logs/sunshine.local-access.log" common
+  
+  #Thay thế bằng đường dẫn đến source của bạn
+    <Directory "D:/dnpcuong/src/sunshine/public">
+        Options FollowSymLinks
+        AllowOverride All
+        DirectoryIndex index.php
+        Require all granted
+    </Directory>
+</VirtualHost>
