@@ -1,0 +1,25 @@
+<VirtualHost *:443>
+  #Thay thế bằng email của Quản trị web của bạn
+  ServerAdmin webmaster@sunshine.local
+  
+  #Thay thế bằng đường dẫn đến source của bạn
+  DocumentRoot "D:/dnpcuong/src/sunshine/public"
+  
+  #Thay thế bằng tên trang web bạn mong muốn
+  ServerName sunshine.local
+  #Thay thế bằng tên file log bạn mong muốn
+  CustomLog "D:/dnpcuong/src/sunshine/logs/xampp.access.log" combined
+  ErrorLog "D:/dnpcuong/src/sunshine/logs/xampp.error.log"
+  #Bật chế độ bảo mật SLL và cung cấp chứng chỉ SSL
+  SSLEngine on
+  SSLCACertificateFile "C:/xampp/apache/conf/ssl.sunshine.local/ssl/ca_bundle.crt"
+  SSLCertificateFile "C:/xampp/apache/conf/ssl.sunshine.local/ssl.crt/server.crt"
+  SSLCertificateKeyFile "C:/xampp/apache/conf/ssl.sunshine.local/ssl.key/server.key"
+  #Thay thế bằng đường dẫn đến source của bạn
+  <Directory "D:/dnpcuong/src/sunshine/public">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
